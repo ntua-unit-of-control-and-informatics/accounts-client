@@ -4,7 +4,9 @@
   "description": "The Euclia accounts api client",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "mocha -r ts-node/register tests/**/*.test.ts",
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
   },
   "repository": {
     "type": "git",
@@ -15,6 +17,19 @@
     "accounts",
     "client"
   ],
-  "author": "euclia@euclia.xyz",
-  "license": "ISC"
+  "author": "Pantelis Karatzas for Euclia <euclia@euclia.xyz>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "rxjs": "^6.6.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.0.3",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0",
+    "nyc": "^15.1.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
 }
