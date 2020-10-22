@@ -1,9 +1,11 @@
 {
-  "name": "accounts-client",
-  "version": "1.0.0",
+  "name": "@euclia/accounts-client",
+  "version": "1.0.22",
   "description": "The Euclia accounts api client",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "demo": "./node_modules/.bin/ts-node ./client.test.ts",
     "build": "tsc",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
@@ -12,12 +14,19 @@
     "type": "git",
     "url": "accounts-ts"
   },
+  "files": [
+    "/dist"
+  ],
+  "__publishConfig": {
+    "__registry": "https://nexus.jaqpot.org/repository/npm-private/"
+  },
   "keywords": [
     "euclia",
     "accounts",
     "client"
   ],
-  "author": "Pantelis Karatzas for Euclia <euclia@euclia.xyz>",
+  "prepublish": "tsc",
+  "author": "Pantelis Karatzas <pantelispanka@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.20.0",

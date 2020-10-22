@@ -3,7 +3,9 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { UserConsumer } from "./consumers/user.consumer";
 import { OrganizationConsumer } from "./consumers/organization.consumer";
 
-export namespace EucliaAccounts{
+// export namespace EucliaAccounts{
+// export module EucliaAccounts{
+
     export interface IEucliaAccounts{
         getUser(id:string, token:string):Promise< User >;
         getOrganization(id:string, token:string):Promise<Organization>;
@@ -53,4 +55,4 @@ export namespace EucliaAccounts{
         }
 
     }
-}
+// }

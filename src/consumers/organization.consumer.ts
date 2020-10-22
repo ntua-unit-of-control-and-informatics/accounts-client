@@ -10,7 +10,7 @@ export interface IUserConsumer{
 export class OrganizationConsumer extends BaseConsumer<Organization> {
 
     constructor(_httpClient:AxiosInstance, _accountsBase:string){
-            super(_httpClient, "organization", _accountsBase)
+            super(_httpClient, "organizations/", _accountsBase)
     }
 
 } 
